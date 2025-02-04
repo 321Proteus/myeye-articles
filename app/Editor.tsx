@@ -28,13 +28,13 @@ function Editor() {
                 ref={sliderRef} type="range"
                 min="0" max="100"
                 className={styles["width-picker"]}
-                onInput={handleSliderInput}
+                onChange={handleSliderInput}
             />
             <textarea
                 ref={editorRef}
                 className={styles.textarea}
                 style={{ width: editorWidth + "px" }}
-                onInput={handleEditorInput}
+                onChange={handleEditorInput}
             />
         </div>
     );
