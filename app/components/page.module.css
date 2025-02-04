@@ -1,20 +1,9 @@
 .page {
 
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-
   display: flex;
   flex-direction: row;
 
-  align-items: center;
-  justify-items: center;
-
   padding: 5vh 5vw 5vh 5vw;
-  height: 100%;
   font-family: var(--font-geist-sans);
 
 }
@@ -41,6 +30,11 @@
   background-color: #383838;
 }
 
+.preview-text {
+  display: inline;
+  font-size: 12px;
+}
+
 .textarea {
   width: 100%;
   height: 82vh;
@@ -49,5 +43,7 @@
 
   border: 1px solid black;
   border-right: 2px dashed gray;
+
+  color: black;
   background-color: transparent;
 }
