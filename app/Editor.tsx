@@ -1,29 +1,25 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import styles from "./page.module.css";
 import useEditorContext from "./Context";
 
 function Editor() {
-
+    const editorRef = useRef<HTMLTextAreaElement | null>(null);
     const sliderRef = useRef<HTMLInputElement | null>(null);
 
     const docWidth = document.documentElement.clientWidth;
     const [editorWidth, setEditorWidth] = useState(docWidth * .4);
-    const { editor } = useEditorContext();
+    const { text, update } = useEditorContext();
 
-    useEffect(() => {
-        const textarea = editor.current!;
-        const slider = sliderRef.current!;
+    const handleSliderInput = () => {
+        const sliderValue = parseInt(sliderRef.current!.value);
+        editorRef.current!.style.width = sliderValue + "px";
+        setEditorWidth(docWidth * sliderValue / 100 * .45);
+    }
 
-        // textarea.oninput = () => {
-        //     text.current = textarea.value;
-        // };
-
-        slider.oninput = () => {
-            const sliderValue = parseInt(slider.value);
-            textarea.style.width = sliderValue + "px";
-            setEditorWidth(docWidth * sliderValue / 100 * .45);
-        };
-    }, [docWidth, text]);
+    const handleEditorInput = () => {
+        text.current = editorRef.current!.value;
+        update();
+    }
 
     return (
         <div className={styles.editor}>
@@ -32,11 +28,13 @@ function Editor() {
                 ref={sliderRef} type="range"
                 min="0" max="100"
                 className={styles["width-picker"]}
+                onInput={handleSliderInput}
             />
             <textarea
                 ref={editorRef}
                 className={styles.textarea}
                 style={{ width: editorWidth + "px" }}
+                onInput={handleEditorInput}
             />
         </div>
     );
