@@ -1,5 +1,6 @@
 import styles from "./page.module.css"
 import useEditorContext from "./Context";
+import { formatText } from "../functions/DocumentFormat";
 
 function Preview() {
 
