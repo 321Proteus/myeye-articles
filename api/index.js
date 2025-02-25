@@ -95,4 +95,4 @@ app.get("/article/:id", (req, res) => {
 
 })
 
-app.listen(2137, () => { console.log("port 2137") });
+app.listen(process.env.PORT || 3000, () => { console.log("port 2137") });
