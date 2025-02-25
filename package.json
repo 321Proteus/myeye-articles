@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
+    "build": "echo 'No build'",
+    "start": "node api/index.js",
     "lint": "next lint"
   },
   "dependencies": {
@@ -25,6 +25,6 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
-    "typescript": "^5"
+    "typescript": "^5.7.3"
   }
 }
