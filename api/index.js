@@ -102,4 +102,7 @@ app.get("/", (req, res) => {
 
 const port = process.env.PORT || 3000;
 
+console.log(__dirname)
+console.log(fs.readdirSync("./"))
+
 app.listen(port, () => { console.log("port " + port) });
