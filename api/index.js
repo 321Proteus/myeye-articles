@@ -7,6 +7,7 @@ const app = express();
 
 function getPath(id) {
     return path.join(path.dirname(fileURLToPath(import.meta.url)), "../db/" + id)
+    console.log(__dirname)
 }
 
 function getArticle(id) {
