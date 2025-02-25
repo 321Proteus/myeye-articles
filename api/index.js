@@ -6,8 +6,9 @@ import { fileURLToPath } from "url";
 const app = express();
 
 function getPath(id) {
-    return path.join(path.dirname(fileURLToPath(import.meta.url)), "../db/" + id)
-    console.log(__dirname)
+    var filepath = path.join(path.dirname(fileURLToPath(import.meta.url)), "../db/" + id)
+    console.log(filepath)
+    return filepath
 }
 
 function getArticle(id) {
@@ -102,7 +103,7 @@ app.get("/", (req, res) => {
 
 const port = process.env.PORT || 3000;
 
-console.log(__dirname)
+console.log(getPath(0))
 console.log(fs.readdirSync("./"))
 
 app.listen(port, () => { console.log("port " + port) });
