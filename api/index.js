@@ -1,14 +1,24 @@
 import express from "express";
 import fs from "fs";
-import path from "path";
 import AdmZip from "adm-zip";
-import { fileURLToPath } from "url";
+import path from "path";
 const app = express();
 
 function getPath(id) {
-    var filepath = path.join(path.dirname(fileURLToPath(import.meta.url)), "../db/" + id)
-    console.log(filepath)
-    return filepath
+    return "./db/" + id
+}
+
+function getHeader(id) {
+
+    const exts = ["jpg", "png", "jpeg", "gif", "webp"]
+
+    for (const ext of exts) { 
+        const fpath = path.resolve(getPath(id)) + "/img01." + ext;
+        if (fs.existsSync(fpath)) return fpath;
+    }
+
+    return null
+
 }
 
 function getArticle(id) {
@@ -48,7 +58,7 @@ app.get("/list/:t", (req, res) => {
 
 app.get("/header/:id", (req, res) => {
 
-    const filePath = getPath(req.params.id) + "/img01.jpg";
+    const filePath = getHeader(req.params.id);
     if (!fs.existsSync(filePath)) {
         res.status(404).send("Nie ma takiego artykulu");
         return;
@@ -102,8 +112,5 @@ app.get("/", (req, res) => {
 })
 
 const port = process.env.PORT || 3000;
-
-console.log(getPath(0))
-console.log(fs.readdirSync("./"))
 
 app.listen(port, () => { console.log("port " + port) });

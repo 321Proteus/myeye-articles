@@ -1,0 +1,6 @@
+Testowy artykuł 1
+Bartłomiej Gajda
+0
+Test LogMAR (Logarithm of the Minimum Angle of Resolution) to jedno z najbardziej precyzyjnych narzędzi do pomiaru ostrości wzroku. W przeciwieństwie do tradycyjnej tablicy Snellena, LogMAR zapewnia bardziej dokładne i powtarzalne wyniki, co czyni go standardem w badaniach okulistycznych.
+Tablica LogMAR składa się z liter ułożonych w równomiernie zmniejszających się rzędach. Każdy rząd ma taką samą liczbę znaków, a odstępy między nimi są proporcjonalne, co pozwala uniknąć błędów wynikających z różnej gęstości liter. Wynik testu oblicza się na podstawie liczby poprawnie odczytanych liter i ich wielkości, co daje dokładniejszy pomiar niż tradycyjna metoda.
+Dzięki swojej precyzji test LogMAR jest powszechnie stosowany w badaniach klinicznych, optometrii oraz diagnostyce wad wzroku. Jego wykorzystanie pomaga lepiej monitorować zmiany w ostrości widzenia i skuteczność leczenia.
